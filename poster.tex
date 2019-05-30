@@ -1,0 +1,186 @@
+\documentclass[final,red]{beamer}
+\mode<presentation>
+{
+\usetheme{Icy}
+}
+
+\setbeamerfont{itemize}{size=\normalsize}
+\setbeamerfont{itemize/enumerate body}{size=\normalsize}
+\setbeamerfont{itemize/enumerate subbody}{size=\normalsize}
+
+\usepackage{todonotes}
+\usepackage{algorithm,algorithmic}
+\usepackage{multirow}
+\usepackage{times}
+\usepackage{amsmath,amsthm, amssymb, latexsym}
+\usepackage{mathtools}
+\usepackage{exscale}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{sfmath}
+\usepackage{xspace}
+\usepackage{booktabs, array}
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{listings}
+\usepackage[orientation=landscape,size=custom,width=240,height=120,scale=1.9]{beamerposter}
+% \listfiles
+% Display a grid to help align images
+% \beamertemplategridbackground[1cm]
+
+\usetikzlibrary{arrows,shapes,chains,matrix,backgrounds}
+\usetikzlibrary{positioning,scopes,shadows,decorations}
+\title{\Huge The World's Most Awesome Poster}
+
+\author{Vishnu Naresh Boddeti \\ Michigan State University}
+\institute[Michigan State University]{Michigan State University, East Lansing, MI, USA}
+\date[\today]{\today}
+
+\begin{document}
+
+\begin{frame}{}
+\begin{columns}[t]
+
+\begin{column}{.3\linewidth}
+\begin{block}{Object Alignment}
+\begin{itemize}
+		\item blah blah
+		\item blah blah
+    \vspace{1cm}
+    \begin{figure}
+    \centering
+    \begin{subfigure}{0.9\textwidth}
+		\missingfigure{missing figure}    	
+    \end{subfigure}
+    \hspace{2cm}
+    \begin{subfigure}{0.9\textwidth}
+    	\missingfigure{missing figure}
+    \end{subfigure}
+    
+    \end{figure}
+    \vspace{1cm}
+    \item blah blah
+    \item blah blah
+	\end{itemize}
+  \vspace{1cm}
+  \begin{exampleblock}{{\large Contribution:}}
+  \end{exampleblock}
+  \vspace{-1cm}
+  \begin{itemize}
+  \item blah blah
+  \item blah blah
+  \item blah blah
+  \end{itemize}
+\end{block}
+
+\begin{block}{Landmark Shape Model}
+\vspace{-1cm}
+\begin{exampleblock}{Bayesian Partial Shape Inference}
+\end{exampleblock}
+
+\begin{columns}
+\begin{column}{0.4\linewidth}
+\begin{figure}
+	\centering
+	\missingfigure{missing figure}
+\end{figure}
+\end{column}
+
+\tikzstyle{format} = [draw, thin, fill=blue!20]
+  \tikzstyle{medium} = [ellipse, , draw, thin, fill=green!20, minimum
+    height=2.0em]
+  \tikzstyle{decision} = [diamond, draw, fill=blue!20,
+    text width=4.5em, text badly centered, node distance=2cm, inner sep=0pt]
+  \tikzstyle{block} = [rectangle, draw, fill=blue!20,
+    text width=3.0em, text centered, rounded corners, minimum height=3em]
+  \tikzstyle{line} = [draw, -latex']
+  \tikzstyle{cloud} = [draw, ellipse,fill=red!20, node
+    distance=2cm,minimum height=2em]
+  \tikzstyle{circ} = [draw, circle, fill=blue!20, node
+    distance=2cm,minimum height=2em,drop shadow]
+\begin{column}{0.4\linewidth}    
+\begin{center}
+\begin{figure}
+\begin{tikzpicture}
+\node[circ] (d1) {{\tiny $s_1$}};
+\node[circ,above of=d1,node distance=5.5cm] (d2) {{\tiny $s_2$}};
+\node[circ,right of=d2,node distance=5.5cm] (d3) {{\tiny $s_3$}};
+\node[circ,above right of=d3,node distance=5.5cm] (d4) {{\tiny $s_4$}};
+\node[circ,right of=d4,node distance=5.5cm] (d5) {{\tiny $s_5$}};
+\node[circ,below right of=d5,node distance=5.5cm] (d6) {{\tiny $s_6$}};
+\node[circ,right of=d6,node distance=5.5cm] (d7) {{\tiny $s_7$}};
+\node[circ,below of=d7,node distance=5.5cm] (d8) {{\tiny $s_8$}};
+\node[circ,left of=d8,node distance=5.6cm] (d9) {{\tiny $s_9$}};
+\node[circ,left of=d9,node distance=13.0cm] (d10) {{\tiny $s_{10}$}};
+\draw[-] (d1) -- (d2);
+\draw[-] (d2) -- (d3);
+\draw[-] (d3) -- (d4);
+\draw[-] (d4) -- (d5);
+\draw[-] (d5) -- (d6);
+\draw[-] (d6) -- (d7);
+\draw[-] (d7) -- (d8);
+\draw[-] (d8) -- (d9);
+\draw[-] (d9) -- (d10);
+\draw[-] (d1) -- (d10);
+\end{tikzpicture}
+\end{figure}
+\end{center}
+\end{column}
+\end{columns}
+
+\vspace{1cm}
+\begin{center}
+      $ BPSI =  \begin{cases} S = \Phi b + \mu + \epsilon \\ Y_p = M_p(sRS+t+\eta) \\ Y_h = M_h(sRS+t)\end{cases}$
+\end{center}
+{\small $S$ - canonical shape, $Y_p$ - partial shape, $Y_h$ - hallucinated shape, $\Theta=\{s,R,t\}$, $M$ - Occlusion Mask}
+
+\begin{exampleblock}{Occlusion Handling}
+\end{exampleblock}
+  \vspace{-2cm}
+  {\tiny
+	\begin{itemize}
+		\item {\small Deformations lie on low-dimensional subspace, can estimate shape from partial observations.}
+    \item {\small Sample and evaluate multiple unoccluded landmark subset ($k$ out of $N$) hypothesis.}
+	\end{itemize}}
+
+\end{block}
+\end{column}
+
+\begin{column}{.3\linewidth}
+\begin{block}{Landmark Appearance Model}
+
+\begin{exampleblock}{Local Feature Representation: HOG}
+\end{exampleblock}
+\end{block}
+\end{column}
+
+\begin{column}{0.3\linewidth}
+\begin{block}{Databases and Experiments}
+\begin{exampleblock}{Dataset}
+\end{exampleblock}
+
+\vspace{-1cm}
+\begin{itemize}
+\item Cars from 3500 images from MIT Street Scene dataset.
+\item 3433 cars manually annotated with landmarks.
+\item Preprocessed via Generalized Procrustes Analysis.
+\end{itemize}
+\end{block}
+
+\begin{block}{References}
+\end{block}
+\begin{thebibliography}{9}
+\bibitem{gentry} 
+C. Gentry. \textit{A fully homomorphic encryption scheme}. Stanford University, 2009.
+ 
+\bibitem{fan} 
+J. Fan and F. Vercauteren.
+\textit{Somewhat practical fully homomorphic encryption}.
+IACR Cryptology ePrint Archive, 2012:144, 2012.
+\end{thebibliography}
+
+\end{column}
+\end{columns}
+\vfill
+\end{frame}
+\end{document}
