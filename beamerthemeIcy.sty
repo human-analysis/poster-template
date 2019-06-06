@@ -57,9 +57,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setbeamertemplate{block begin}{
   \vskip.75ex
+  % \begin{beamercolorbox}[ht=3ex,dp=1ex,center,rounded=false,shadow=false,leftskip=1cm,colsep*=.75ex]{block title}%
+  %   \usebeamerfont*{block title}\insertblocktitle
+  % \end{beamercolorbox}%
+
   \begin{beamercolorbox}[ht=3ex,dp=1ex,center,rounded=false,shadow=false,leftskip=1cm,colsep*=.75ex]{block title}%
-    \usebeamerfont*{block title}\insertblocktitle
+    \vbox to0.75ex{\vfil\hbox{\usebeamerfont*{block title}\insertblocktitle}}
   \end{beamercolorbox}%
+
   {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
   \usebeamerfont{block body}%
   \begin{beamercolorbox}[rounded=false,shadow=false,leftskip=1cm,colsep*=.75ex,sep=2ex,vmode]{block body}%
@@ -78,22 +83,23 @@
       \begin{column}{.2\paperwidth}
         \vskip10ex
         \centering
-         \includegraphics[width=.2\linewidth,keepaspectratio]{logos/qr-code.png}
+         \includegraphics[width=.2\linewidth,keepaspectratio]{logos/qr-code.pdf}
          \hskip3ex
-         \includegraphics[width=.2\linewidth,keepaspectratio]{logos/msu-logo.png}
+         \includegraphics[width=.2\linewidth,keepaspectratio]{logos/msu-logo-green.pdf}
          \vskip1ex
       \end{column}
       \begin{column}{.6\paperwidth}
         \hskip2ex
         \vskip15ex
         \centering
-        \usebeamercolor{title in headline}{\color{fg}\textbf{\LARGE{\inserttitle}}\\[4ex]}
-        \usebeamercolor{author in headline}{\color{fg}\Large{\insertauthor}\\[2ex]}
+        \usebeamercolor{title in headline}{\color{fg}\textbf{\Huge{\inserttitle}}\\[4ex]}
+        \usebeamercolor{author in headline}{\color{fg}\huge{\insertauthor}\\[1ex]}
+        \usebeamercolor{institute in headline}{\color{fg}\huge{\insertinstitute}\\[0ex]}
       \end{column}
       \begin{column}{.2\paperwidth}
       \vskip10ex
       \centering
-      \includegraphics[scale=1.6]{logos/2019-cvpr-logo.png}
+      \includegraphics[scale=2]{logos/2019-cvpr-logo.png}
       \end{column}
     \end{columns}
   \end{beamercolorbox}
@@ -111,7 +117,7 @@
 
   \leavevmode%
   \begin{beamercolorbox}[ht=4ex,leftskip=1cm,rightskip=1cm]{footline}%
-    Mighigan State University
+    Michigan State University
     \hfill
     \url{http://hal.cse.msu.edu}
     \hfill
